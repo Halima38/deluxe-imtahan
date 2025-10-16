@@ -1,0 +1,104 @@
+@use "../variables" as *;
+
+.photo {
+  .big {
+    margin-bottom: 40px;
+
+    .up {
+      font-weight: 400;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .underline {
+      margin: 0 auto;
+      width: 100px;
+      height: 2px;
+      background-color: $cofeColor;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 2px;
+        background-color: $cofeColor;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 4px;
+      }
+    }
+  }
+
+  .down {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 35vh;
+
+    .imgHoverBox {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        display: block;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        i {
+          font-size: 24px;
+          color: $pureWhite;
+          transform: scale(0.8);
+          transition: transform 0.3s ease;
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+
+        .overlay {
+          opacity: 1;
+
+          i {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .photo {
+    .down {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+
+      img {
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,260 @@
+@use "../variables" as *;
+
+.ourRooms {
+  background-color: $bgGray;
+  .container {
+    .row {
+      justify-content: center;
+      .sectionTitle {
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+        padding-bottom: 20px;
+        .hSection {
+          font-size: 38px;
+          font-weight: 400;
+          padding-bottom: 20px;
+        }
+        .underline {
+          margin: 0 auto;
+          width: 100px;
+          height: 2px;
+          background-color: $cofeColor;
+          position: relative;
+
+          &::before {
+            gap: 5px;
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background-color: $cofeColor;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 4px;
+          }
+        }
+      }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      place-items: center;
+      width: 100%;
+
+      .roomBox {
+        width: 320px;
+        height: 400px;
+        margin-bottom: 20px;
+        border: 1px solid $roomColor;
+        .roomBoxImage {
+          width: 100%;
+          height: 220px;
+          position: relative;
+          overflow: hidden;
+
+          img {
+            height: auto;
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            margin: 10;
+          }
+          .imageOverlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s ease;
+
+            i {
+              color: $darkBlack;
+              background-color: $pureWhite;
+              height: 45px;
+              width: 45px;
+              border-radius: 50%;
+              font-size: 9px;
+              transform: scale(0.5);
+              transition: 0.3s ease;
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          &:hover .imageOverlay {
+            opacity: 1;
+
+            i {
+              transform: scale(1.2);
+            }
+          }
+        }
+        .roomBoxContent {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+
+          h3 {
+            font-size: 22px;
+            font-weight: 300;
+          }
+
+          a {
+            color: $darkBlack;
+            font-size: 15px;
+            transition: 0.3s ease;
+            padding-top: 30px;
+
+            &:hover {
+              color: $cofeColor;
+            }
+          }
+
+          .price {
+            font-size: 26px;
+
+            .amount {
+              display: inline-block;
+              position: relative;
+              padding-bottom: 3px;
+
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90px;
+                height: 2px;
+                background-color: $cofeColor;
+              }
+            }
+
+            span:last-child {
+              font-size: 15px;
+              color: $grayy;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1124px) {
+  .ourRooms {
+    .container {
+      width: 93%;
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+      }
+
+      .roomBox {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+
+        .roomBoxContent {
+          margin-top: 5px;
+
+          h3 {
+            font-size: 18px;
+          }
+
+          a {
+            font-size: 14px;
+            padding-top: 15px;
+          }
+
+          .price {
+            font-size: 20px;
+
+            .amount::after {
+              width: 60px;
+              height: 1px;
+            }
+
+            span:last-child {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ourRooms {
+    .container {
+      width: 50%;
+
+      .grid {
+        width: 60%;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        width: auto;
+        height: auto;
+        place-items: center;
+      }
+
+      .roomBox {
+        width: 100%;
+        height: 250px;
+        margin-bottom: 10px;
+
+        .roomBoxImage {
+          width: 100%;
+          height: auto;
+
+          img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .ourRooms {
+    overflow-x: hidden;
+
+    .container {
+      width: 100%;
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+        padding: 0 10px;
+        place-items: center; // 💡 ƏN VACİB HİSSƏ! mərkəzə düzür
+      }
+
+      .roomBox {
+        width: 100%;
+        max-width: 260px;
+        border: 1px solid $roomColor;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}

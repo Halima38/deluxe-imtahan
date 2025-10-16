@@ -1,0 +1,87 @@
+@use "../variables" as *;
+
+.boxContact {
+  background-color: $bgGray;
+  height: 50vh;
+
+  .container {
+    .information {
+      font-size: 28px;
+      font-weight: 300;
+      padding: 40px 0;
+    }
+    .row {
+      gap: 20px;
+      height: 20vh;
+
+      .miniBox {
+        padding: 80px 0;
+        background-color: $pureWhite;
+        font-weight: 400;
+        font-size: 15px;
+        width: 25%;
+        color: $grayContact;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+          color: $darkBlack;
+          transition: 0.3s ease;
+          &:hover {
+            color: rgb(0, 153, 255);
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) and (min-width: 768px) {
+  .boxContact {
+    height: 90vh;
+    .container {
+      .row {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 20px;
+
+        .miniBox {
+          width: 45%; 
+          display: flex;
+          flex-direction: column; 
+          align-items: center;
+          text-align: center;
+          padding: 40px 15px;
+
+          a {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .boxContact {
+    height: 90vh;
+    padding-top: 30px;
+    .container {
+      width: 92%;
+      .information {
+        padding-top: 20px;
+        font-size: 23px;
+         display: flex;
+        justify-content: center;
+       
+      }
+     
+      .row {
+        gap: 20px;
+        flex-direction: column;
+        .miniBox {
+          padding: 20px 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use "../variables" as *;
+
+.numbers {
+  background-color: $cofeColor;
+  height: 40vh;
+
+  .container {
+    .row {
+      height: 30vh;
+
+      .numberBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 25%;
+        font-weight: 400;
+
+        .big {
+          color: $pureWhite;
+          font-size: 30px;
+          line-height: 1.8;
+        }
+        .small {
+          color: $opacityWhite;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .numbers {
+    height: 100vh;
+    .container {
+      .row {
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        .numberBox {
+          width: 100%;
+          margin-bottom: 10px;
+          display: flex;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+}

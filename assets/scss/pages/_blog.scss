@@ -1,0 +1,83 @@
+@use "../variables" as *;
+
+.blogSection {
+  .container {
+    .row {
+      flex-direction: row;
+      justify-content: space-between;
+      .blogMini {
+        width: 25%;
+
+        a {
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            color: $grayy;
+            transition: 0.4s ease;
+            &:hover {
+              color: $darkBlack;
+            }
+          }
+          h4 {
+            font-size: 18px;
+            font-weight: 400;
+
+            color: $darkBlack;
+            transition: 0.4s ease;
+            &:hover {
+              color: $cofeColor;
+            }
+          }
+          .blogPhoto {
+            width: 250px;
+            height: 250px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .blogSection {
+    .container {
+      width: 90%;
+
+      .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        .blogMini {
+          width: 100%;
+          text-align: center;
+
+          a {
+            .blogPhoto {
+              width: 100%;
+              height: auto;
+
+              img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+              }
+            }
+
+            h4 {
+              font-size: 16px;
+            }
+
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

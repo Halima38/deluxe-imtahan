@@ -1,0 +1,190 @@
+@use "../variables";
+
+.heroAfter {
+  
+  min-height: 20px;
+  position: relative;
+  z-index: 1;
+  bottom: auto;
+  left: auto;
+  .container {
+    position: relative;
+    .row {
+      .boxHero {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 10;
+        margin-bottom: 40px;
+
+        .boxMini {
+          background-color: variables.$pureWhite;
+          font-size: 15px;
+          letter-spacing: 2px;
+          padding: 24px;
+          h4 {
+            font-weight: 400;
+            border: solid 2px variables.$pureWhite;
+          }
+          p {
+            text-transform: uppercase;
+            
+          }
+        }
+
+        .boxMini:nth-child(1) {
+          width: 25%;
+        }
+        .boxMini:nth-child(2) {
+          width: 25%;
+        }
+        .boxMini:nth-child(3) {
+          width: 15%;
+        }
+        .boxMini:nth-child(4) {
+          width: 15%;
+        }
+        .boxMini:nth-child(5) {
+          width: 20%;
+          height: 100%;
+          background-color: variables.$cofeColor;
+          margin: auto;
+          padding-top: 36px;
+          padding-bottom: 36px;
+          transition: all 0.5s ease;
+          cursor: pointer;
+
+          p {
+            color: variables.$pureWhite;
+            text-transform: capitalize;
+            text-wrap: nowrap;
+          }
+
+          &:hover {
+            transition: all 0.5s ease;
+            background-color: variables.$darkBlack;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .heroAfter {
+    .container {
+      .row {
+        .boxHero {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          .boxMini {
+            background-color: variables.$pureWhite;
+            font-size: 13px;
+            letter-spacing: 2px;
+            padding: 16px;
+            width: 48%;
+
+            h4 {
+              font-weight: 400;
+              border: solid 2px variables.$pureWhite;
+            }
+            p {
+              text-transform: uppercase;
+              color: variables.$cofeColor;
+            }
+          }
+
+          .boxMini:nth-child(1) {
+            width: 20%;
+          }
+          .boxMini:nth-child(2) {
+            width: 20%;
+          }
+          .boxMini:nth-child(3) {
+            width: 20%;
+          }
+          .boxMini:nth-child(4) {
+            width: 20%;
+          }
+          .boxMini:nth-child(5) {
+            width: 100%;
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .heroAfter {
+    .container {
+      position: relative;
+
+      .row {
+        .boxHero {
+          bottom: auto;
+          left: auto;
+          transform: none;
+          z-index: auto;
+          margin-top: 20px;
+          position: relative;
+
+          .boxMini {
+            width: 100%;
+            font-size: 12px;
+            padding: 12px;
+            height: auto;
+            h4 {
+              font-weight: 400;
+              border: solid 2px variables.$pureWhite;
+              font-size: 20px;
+            }
+            p {
+              text-transform: uppercase;
+              color: #7b6233;
+              font-size: 15px;
+              margin-bottom: 20px;
+            }
+          }
+
+          .boxMini:nth-child(1) {
+            width: 100%;
+          }
+          .boxMini:nth-child(2) {
+            width: 100%;
+          }
+          .boxMini:nth-child(3) {
+            width: 100%;
+          }
+          .boxMini:nth-child(4) {
+            width: 100%;
+          }
+
+          .boxMini:nth-child(5) {
+            width: 100%;
+            height: 20vh;
+            text-align: center;
+            margin: auto 0;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            p {
+              margin-bottom: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

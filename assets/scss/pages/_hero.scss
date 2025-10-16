@@ -1,0 +1,56 @@
+@use "../variables" as *;
+
+.hero {
+  .mySwiper {
+    .swiper-wrapper {
+      .swiper-slide {
+        position: relative;
+        img {
+          width: 100%;
+          height: 100vh;
+          object-fit: cover;
+          display: block;
+        }
+
+        .title {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 60px;
+          color: $pureWhite;
+          width: 100%;
+          text-align: center;
+        }
+
+        .paragraphHero {
+          position: absolute;
+          top: 52%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 20px;
+          color: $pureWhite;
+        }
+      }
+    }
+  }
+}
+
+@media  (max-width: 768px) {
+  .hero {
+    .mySwiper {
+      .swiper-wrapper {
+        .swiper-slide {
+          .title {
+            font-size: 20px;
+           
+          }
+          .paragraphHero {
+            font-size: 14px;
+            padding-top: 50px;
+          }
+        }
+      }
+    }
+  }
+}

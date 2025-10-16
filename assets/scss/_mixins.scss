@@ -1,0 +1,10 @@
+@use "./variables" as *;
+
+@mixin bars($top_bars) {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: $top_bars;
+  transition: 0.3s all;
+  background-color: $pureWhite;
+}

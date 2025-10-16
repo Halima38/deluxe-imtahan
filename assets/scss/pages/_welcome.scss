@@ -1,0 +1,143 @@
+@use "../variables" as *;
+
+.welcome {
+  .container {
+    .row {
+      justify-content: center;
+      align-items: center;
+      gap: 80px;
+
+      .rightWelcome {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        .p {
+          color: $grayContact;
+          font-size: 14px;
+          padding-left: 30px;
+        }
+        .h {
+          font-size: 38px;
+          font-weight: 400;
+          padding-left: 30px;
+          margin: 15px 0 40px 0;
+        }
+        .paragraph {
+          color: $grayContact;
+          font-size: 15px;
+          margin-bottom: 15px;
+        }
+        .iconWelcome {
+          a {
+            i {
+              color: $cofeColor;
+              padding: 3px;
+            }
+          }
+        }
+      }
+
+      .leftWelcome {
+        width: 50%;
+        position: relative;
+        .image {
+          img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            position: relative;
+          }
+        }
+      }
+      .playBtn {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        ion-icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 100px;
+          color: $cofeColor;
+          opacity: 0.8;
+          cursor: pointer;
+          transition: 0.3s ease;
+
+          &:hover {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+            color: $pureWhite;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+}
+.playIcon {
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    .container {
+      width: 93%;
+      .row {
+        flex-direction: column;
+        gap: 20px;
+
+        .leftWelcome {
+          order: 1;
+          width: 100%;
+          .image img {
+            height: 100vh;
+          }
+          .playBtn {
+            ion-icon {
+              font-size: 50px;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+
+        .rightWelcome {
+          order: 2;
+          width: 100%;
+
+          .h {
+            text-align: center;
+            padding-left: 0;
+            font-size: 30px;
+          }
+
+          .p,
+          .paragraph {
+            text-align: center;
+            padding-left: 0;
+          }
+
+          .iconWelcome {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
